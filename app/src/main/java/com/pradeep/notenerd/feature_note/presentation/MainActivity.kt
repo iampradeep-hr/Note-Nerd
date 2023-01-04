@@ -1,4 +1,4 @@
-package com.pradeep.notenerd
+package com.pradeep.notenerd.feature_note.presentation
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
