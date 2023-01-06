@@ -7,7 +7,6 @@ import com.pradeep.notenerd.feature_note.domain.util.OrderType
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-
 // Basically business logic is written here
 
 class GetNotesUseCase(
