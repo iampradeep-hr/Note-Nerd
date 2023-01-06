@@ -16,7 +16,7 @@ import androidx.compose.ui.unit.dp
 fun DefaultRadioButton(
     text: String,
     selected: Boolean,
-    onSelected: () -> Unit,
+    onSelect: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -24,18 +24,14 @@ fun DefaultRadioButton(
         verticalAlignment = Alignment.CenterVertically
     ) {
         RadioButton(
-            selected = selected, onClick = {
-
-            },
+            selected = selected,
+            onClick = onSelect,
             colors = RadioButtonDefaults.colors(
                 selectedColor = MaterialTheme.colors.primary,
                 unselectedColor = MaterialTheme.colors.onBackground
             )
         )
-        
-        Spacer(modifier = Modifier.width(18.dp))
-
+        Spacer(modifier = Modifier.width(8.dp))
         Text(text = text, style = MaterialTheme.typography.body1)
-
     }
 }
