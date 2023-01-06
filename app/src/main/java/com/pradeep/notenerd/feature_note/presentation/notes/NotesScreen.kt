@@ -22,6 +22,7 @@ import androidx.navigation.NavController
 import com.pradeep.notenerd.R
 import com.pradeep.notenerd.feature_note.presentation.notes.components.NoteItem
 import com.pradeep.notenerd.feature_note.presentation.notes.components.OrderSection
+import com.pradeep.notenerd.feature_note.presentation.util.Screen
 import kotlinx.coroutines.launch
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
@@ -38,7 +39,7 @@ fun NotesScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-
+                    navController.navigate(Screen.AddEditNoteScreen.route)
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
@@ -62,8 +63,9 @@ fun NotesScreen(
                     viewModel.onEvent(NotesEvent.ToggleOrderSelection)
                 }) {
                     Icon(
-                        painter = painterResource(id = R.drawable.sort_arrow),
-                        contentDescription = "sort"
+                        painter = painterResource(id = R.drawable.sort_line),
+                        contentDescription = "sort",
+                        modifier = Modifier.size(30.dp)
                     )
                 }
             }
@@ -89,7 +91,10 @@ fun NotesScreen(
                         modifier = Modifier
                             .fillMaxWidth()
                             .clickable {
-
+                                navController.navigate(
+                                    Screen.AddEditNoteScreen.route +
+                                            "?noteId=${note.id}&noteColor=${note.color}"
+                                )
                             },
                         onDeleteClick = {
                             viewModel.onEvent(NotesEvent.DeleteNote(note))
@@ -103,7 +108,7 @@ fun NotesScreen(
                                 }
                             }
                         }
-AddNoteUseCase
+
                     )
                     Spacer(modifier = Modifier.height(16.dp))
                 }

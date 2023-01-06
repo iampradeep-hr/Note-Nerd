@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+
 import androidx.navigation.NavController
 import com.pradeep.notenerd.R
 import com.pradeep.notenerd.feature_note.domain.model.Note
@@ -58,7 +59,7 @@ fun AddEditNoteScreen(
                         message = event.message
                     )
                 }
-                is AddEditNoteViewModel.UiEvent.saveNote -> {
+                is AddEditNoteViewModel.UiEvent.SaveNote -> {
                     navController.navigateUp()
                 }
             }
@@ -73,7 +74,7 @@ fun AddEditNoteScreen(
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
-                Icon(painter = painterResource(id = R.drawable.save), contentDescription = "Save note")
+                Icon(painter = painterResource(id = R.drawable.save), contentDescription = "Save note", modifier = Modifier.size(30.dp))
             }
         },
         scaffoldState = scaffoldState

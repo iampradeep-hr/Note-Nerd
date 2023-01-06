@@ -38,9 +38,10 @@ class AddEditNoteViewModel @Inject constructor(
 
     private val _eventFlow= MutableSharedFlow<UiEvent>()
     val eventFlow=_eventFlow.asSharedFlow()
+
     sealed class UiEvent{
         data class ShowSnackBar(val message:String):UiEvent()
-        object saveNote:UiEvent()
+        object SaveNote:UiEvent()
     }
 
     init {
@@ -54,7 +55,7 @@ class AddEditNoteViewModel @Inject constructor(
                                 text = it.title,
                                 isHintVisible = false
                             )
-                            _noteBody.value=noteTitle.value.copy(
+                            _noteBody.value=noteBody.value.copy(
                                 text = it.body,
                                 isHintVisible = false
                             )
@@ -103,7 +104,7 @@ class AddEditNoteViewModel @Inject constructor(
                                 color = noteColor.value
                             )
                         )
-                        _eventFlow.emit(UiEvent.saveNote)
+                        _eventFlow.emit(UiEvent.SaveNote)
                     }catch (e:InvalidNoteException){
                         _eventFlow.emit(
                             UiEvent.ShowSnackBar(

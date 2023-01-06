@@ -19,7 +19,9 @@ import com.pradeep.notenerd.feature_note.presentation.add_edit_note.AddEditNoteS
 import com.pradeep.notenerd.feature_note.presentation.notes.NotesScreen
 import com.pradeep.notenerd.feature_note.presentation.util.Screen
 import com.pradeep.notenerd.ui.theme.NoteNerdTheme
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
