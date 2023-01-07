@@ -1,4 +1,6 @@
 # Note-Nerd :rocket:
+<img src="https://user-images.githubusercontent.com/81664507/211140085-3ee4c30e-50c3-4427-97e7-e24a49d7f1f5.png" width="200" height="160" />
+
 A simple and intuitive way to keep track of your thoughts and ideas.
 Butilt with *Jetpack Compose* :heart:
 ## Download here :point_down: & Leave a :lollipop: if you like.
